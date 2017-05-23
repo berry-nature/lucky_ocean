@@ -1,11 +1,6 @@
 const path = require('path');
 
-module.exports = {
-  entry: "./web/static/js/app.js",
-  output: {
-    path: path.resolve(__dirname, "priv/static/js"),
-    filename: "app.js"
-  },
+var config = {
   module: {
     loaders: [{
       test: /\.js$/,
@@ -15,5 +10,18 @@ module.exports = {
         presets: ["es2015"]
       }
     }]
-  }
+  },
 };
+
+var application = Object.assign({}, config, {
+  name: 'application',
+  entry: "./web/static/js/app.js",
+  output: {
+    path: path.resolve(__dirname, "priv/static/js"),
+    filename: "app.js"
+  },
+});
+
+module.exports = [
+  application,
+];
