@@ -1,0 +1,28 @@
+<h2>Show article</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @article.title %>
+  </li>
+
+  <li>
+    <strong>Sub title:</strong>
+    <%= @article.sub_title %>
+  </li>
+
+  <li>
+    <strong>Author:</strong>
+    <%= @article.author %>
+  </li>
+
+  <li>
+    <strong>Body:</strong>
+    <%= @article.body %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: admin_article_path(@conn, :edit, @article) %>
+<%= link "Back", to: admin_article_path(@conn, :index) %>
